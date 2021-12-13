@@ -6,11 +6,19 @@ namespace Programming_Lab_5 {
         Data data = new Data();
         public MainForm() {
             InitializeComponent();
+            this.lstbRegex.Click += (s, e) =>
+            {
+                this.txtbFindString.Text = this.lstbRegex.Text;
+                data.Find(this.rtbFileText.Text);
+                ShowMatch();
+            };
             if (Settings.Default.DefaultFileName != null)
             {
                 data.ReadFromFile(Settings.Default.DefaultFileName);
                 this.rtbFileText.Text = data.Text;
             }
+
+
 
         }
 

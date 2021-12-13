@@ -45,8 +45,8 @@
             this.searchMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(700, 24);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+            this.menuStrip.Size = new System.Drawing.Size(800, 30);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -56,44 +56,42 @@
             this.fileOpenMenuItem,
             this.exitMenuItem});
             this.fileMenuItem.Name = "fileMenuItem";
-            this.fileMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.fileMenuItem.Size = new System.Drawing.Size(59, 24);
             this.fileMenuItem.Text = "Файл";
             // 
             // fileOpenMenuItem
             // 
             this.fileOpenMenuItem.Name = "fileOpenMenuItem";
-            this.fileOpenMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.fileOpenMenuItem.Size = new System.Drawing.Size(150, 26);
             this.fileOpenMenuItem.Text = "Открыть";
             this.fileOpenMenuItem.Click += new System.EventHandler(this.OpenFile);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.exitMenuItem.Size = new System.Drawing.Size(150, 26);
             this.exitMenuItem.Text = "Выход";
             this.exitMenuItem.Click += new System.EventHandler(this.OpenFile);
             // 
             // searchMenuItem
             // 
             this.searchMenuItem.Name = "searchMenuItem";
-            this.searchMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.searchMenuItem.Size = new System.Drawing.Size(66, 24);
             this.searchMenuItem.Text = "Поиск";
             // 
             // txtbFindString
             // 
-            this.txtbFindString.Location = new System.Drawing.Point(10, 31);
-            this.txtbFindString.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtbFindString.Location = new System.Drawing.Point(11, 41);
             this.txtbFindString.Name = "txtbFindString";
-            this.txtbFindString.Size = new System.Drawing.Size(502, 23);
+            this.txtbFindString.Size = new System.Drawing.Size(573, 27);
             this.txtbFindString.TabIndex = 1;
             this.txtbFindString.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DownAnyKey);
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(518, 30);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFind.Location = new System.Drawing.Point(592, 40);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(82, 22);
+            this.btnFind.Size = new System.Drawing.Size(94, 29);
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Найти";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -101,10 +99,9 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(606, 30);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Location = new System.Drawing.Point(693, 40);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(82, 22);
+            this.btnNext.Size = new System.Drawing.Size(94, 29);
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Еще";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -113,36 +110,47 @@
             // lstbRegex
             // 
             this.lstbRegex.FormattingEnabled = true;
-            this.lstbRegex.ItemHeight = 15;
-            this.lstbRegex.Location = new System.Drawing.Point(10, 56);
-            this.lstbRegex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lstbRegex.ItemHeight = 20;
+            this.lstbRegex.Items.AddRange(new object[] {
+            "\\sк..а\\s",
+            "\\b\\d{4}\\b ",
+            "\\bо[а-я]+ ",
+            "\\bо[а-я]{5,} ",
+            "\\bо\\S+",
+            "\\b\\S*ша\\b ",
+            "\\b[а-я]*(ить|ать)\\b ",
+            "[А-Я].*[.!?]+  ",
+            "\\b[ф-я].*?\\b  ",
+            "\\b(\\S)\\S+(\\S)\\b",
+            "([LMXIV]+)\\n",
+            "\\b(\\S)\\S*\\1\\b "});
+            this.lstbRegex.Location = new System.Drawing.Point(11, 75);
             this.lstbRegex.Name = "lstbRegex";
-            this.lstbRegex.Size = new System.Drawing.Size(242, 349);
+            this.lstbRegex.Size = new System.Drawing.Size(276, 464);
             this.lstbRegex.TabIndex = 4;
             // 
             // rtbFileText
             // 
-            this.rtbFileText.Location = new System.Drawing.Point(257, 56);
-            this.rtbFileText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rtbFileText.Location = new System.Drawing.Point(294, 75);
             this.rtbFileText.Name = "rtbFileText";
-            this.rtbFileText.Size = new System.Drawing.Size(433, 236);
+            this.rtbFileText.Size = new System.Drawing.Size(494, 313);
             this.rtbFileText.TabIndex = 5;
             this.rtbFileText.Text = "";
             // 
             // rtbSearchResult
             // 
-            this.rtbSearchResult.Location = new System.Drawing.Point(257, 296);
-            this.rtbSearchResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rtbSearchResult.Location = new System.Drawing.Point(294, 395);
             this.rtbSearchResult.Name = "rtbSearchResult";
-            this.rtbSearchResult.Size = new System.Drawing.Size(433, 109);
+            this.rtbSearchResult.ReadOnly = true;
+            this.rtbSearchResult.Size = new System.Drawing.Size(494, 144);
             this.rtbSearchResult.TabIndex = 6;
             this.rtbSearchResult.Text = "";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 416);
+            this.ClientSize = new System.Drawing.Size(800, 555);
             this.Controls.Add(this.rtbSearchResult);
             this.Controls.Add(this.rtbFileText);
             this.Controls.Add(this.lstbRegex);
@@ -151,7 +159,6 @@
             this.Controls.Add(this.txtbFindString);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "Лабочка № 5";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnClosing);
