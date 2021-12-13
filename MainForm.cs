@@ -1,10 +1,17 @@
-﻿using System.Text.RegularExpressions;
+﻿using Programming_Lab_5.Properties;
+using System.Text.RegularExpressions;
 
 namespace Programming_Lab_5 {
-    public partial class Form1 : Form {
+    public partial class MainForm : Form {
         Data data = new Data();
-        public Form1() {
+        public MainForm() {
             InitializeComponent();
+            if (Settings.Default.DefaultFileName != null)
+            {
+                data.ReadFromFile(Settings.Default.DefaultFileName);
+                this.rtbFileText.Text = data.Text;
+            }
+
         }
 
         private void OpenFile(object sender, EventArgs e) {
@@ -34,8 +41,11 @@ namespace Programming_Lab_5 {
                 this.rtbFileText.ScrollToCaret();
                 this.rtbFileText.SelectionBackColor = Color.Yellow;
 
-                this.rtbSearchResult.Text = $"Найдено[{m.Index}]: ##{m.Value}##\n";
+                this.rtbSearchResult.Text = $"Найдено[{m.Index}]: {m.Value}\n";
 
+            }
+            if (m != null && !m.Success) {
+                this.rtbSearchResult.Text = $"По запросу ничего не найдено!";
             }
         }
 
@@ -49,6 +59,13 @@ namespace Programming_Lab_5 {
                 Find(sender, e);
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void OnClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.DefaultFileName = data.FileName;
+            Settings.Default.Save();
+
         }
     }
 }
