@@ -4,7 +4,7 @@ namespace Programming_Lab_5 {
     class Data {
         public string Text { get; private set; }
         public string FileName { get; private set; }
-        public Match Match;
+        public Match Match { get; private set; }
         public void ReadFromFile(string filename) {
             using (StreamReader sr = new StreamReader(filename)) {
                 this.Text = sr.ReadToEnd().Replace("\r", "");
@@ -13,8 +13,8 @@ namespace Programming_Lab_5 {
         public void Find(string re) {
             this.Match = Regex.Match(this.Text, re);
         }
-        public Data() {
-            
+        public void Next() {
+            Match = this.Match.NextMatch();
         }
     }
 }

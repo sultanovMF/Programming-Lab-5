@@ -16,6 +16,7 @@ namespace Programming_Lab_5 {
             if (res == DialogResult.OK) {
                 data.ReadFromFile(dlg.FileName);
                 Console.WriteLine(dlg.FileName);
+                this.rtbFileText.Text = data.Text;
             }
         }
 
@@ -25,7 +26,7 @@ namespace Programming_Lab_5 {
         }
 
         private void ShowMatch() {
-            Match m = null;
+            Match m = data.Match;
             if (m != null && m.Success) {
                 this.rtbFileText.SelectionBackColor = Color.White;
                 this.rtbFileText.SelectionStart = m.Index;
@@ -33,8 +34,20 @@ namespace Programming_Lab_5 {
                 this.rtbFileText.ScrollToCaret();
                 this.rtbFileText.SelectionBackColor = Color.Yellow;
 
-                rtbSearchResult.Text = $"Найдено[{m.Index}]: ##{m.Value}##\n";
+                this.rtbSearchResult.Text = $"Найдено[{m.Index}]: ##{m.Value}##\n";
 
+            }
+        }
+
+        private void NextMatch(object sender, EventArgs e) {
+            data.Next();
+            this.ShowMatch();
+        }
+
+        private void DownAnyKey(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                Find(sender, e);
+                e.SuppressKeyPress = true;
             }
         }
     }

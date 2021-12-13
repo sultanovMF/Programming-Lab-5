@@ -37,14 +37,14 @@
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // topMenu
+            // menuStrip
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenuItem,
             this.searchMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "topMenu";
+            this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
@@ -61,14 +61,14 @@
             // fileOpenMenuItem
             // 
             this.fileOpenMenuItem.Name = "fileOpenMenuItem";
-            this.fileOpenMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fileOpenMenuItem.Size = new System.Drawing.Size(150, 26);
             this.fileOpenMenuItem.Text = "Открыть";
             this.fileOpenMenuItem.Click += new System.EventHandler(this.OpenFile);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitMenuItem.Size = new System.Drawing.Size(150, 26);
             this.exitMenuItem.Text = "Выход";
             this.exitMenuItem.Click += new System.EventHandler(this.OpenFile);
             // 
@@ -78,53 +78,54 @@
             this.searchMenuItem.Size = new System.Drawing.Size(66, 24);
             this.searchMenuItem.Text = "Поиск";
             // 
-            // searchTextBox
+            // txtbFindString
             // 
             this.txtbFindString.Location = new System.Drawing.Point(11, 41);
-            this.txtbFindString.Name = "searchTextBox";
+            this.txtbFindString.Name = "txtbFindString";
             this.txtbFindString.Size = new System.Drawing.Size(513, 27);
             this.txtbFindString.TabIndex = 1;
             // 
-            // searchButton
+            // btnFind
             // 
             this.btnFind.Location = new System.Drawing.Point(546, 41);
-            this.btnFind.Name = "searchButton";
+            this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(94, 29);
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Найти";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.Find);
             // 
-            // moreButton
+            // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(666, 40);
-            this.btnNext.Name = "moreButton";
+            this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(94, 29);
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Еще";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.NextMatch);
             // 
-            // listBox1
+            // lstbRegex
             // 
             this.lstbRegex.FormattingEnabled = true;
             this.lstbRegex.ItemHeight = 20;
             this.lstbRegex.Location = new System.Drawing.Point(12, 74);
-            this.lstbRegex.Name = "listBox1";
+            this.lstbRegex.Name = "lstbRegex";
             this.lstbRegex.Size = new System.Drawing.Size(276, 464);
             this.lstbRegex.TabIndex = 4;
             // 
-            // richTextBox1
+            // rtbFileText
             // 
             this.rtbFileText.Location = new System.Drawing.Point(294, 74);
-            this.rtbFileText.Name = "richTextBox1";
+            this.rtbFileText.Name = "rtbFileText";
             this.rtbFileText.Size = new System.Drawing.Size(494, 314);
             this.rtbFileText.TabIndex = 5;
             this.rtbFileText.Text = "";
             // 
-            // richTextBox2
+            // rtbSearchResult
             // 
             this.rtbSearchResult.Location = new System.Drawing.Point(294, 394);
-            this.rtbSearchResult.Name = "richTextBox2";
+            this.rtbSearchResult.Name = "rtbSearchResult";
             this.rtbSearchResult.Size = new System.Drawing.Size(494, 144);
             this.rtbSearchResult.TabIndex = 6;
             this.rtbSearchResult.Text = "";
