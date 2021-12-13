@@ -28,6 +28,10 @@
             this.fileOpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orOfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.индивидуальныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtbFindString = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -42,7 +46,11 @@
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenuItem,
-            this.searchMenuItem});
+            this.searchMenuItem,
+            this.orOfToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.статистикаToolStripMenuItem,
+            this.индивидуальныеToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
@@ -78,6 +86,33 @@
             this.searchMenuItem.Name = "searchMenuItem";
             this.searchMenuItem.Size = new System.Drawing.Size(66, 24);
             this.searchMenuItem.Text = "Поиск";
+            // 
+            // orOfToolStripMenuItem
+            // 
+            this.orOfToolStripMenuItem.Name = "orOfToolStripMenuItem";
+            this.orOfToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.orOfToolStripMenuItem.Text = "Or, Of";
+            this.orOfToolStripMenuItem.Click += new System.EventHandler(this.OnOrOfClick);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(51, 24);
+            this.toolStripMenuItem1.Text = "????";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.OnQuestionClick);
+            // 
+            // статистикаToolStripMenuItem
+            // 
+            this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
+            this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.статистикаToolStripMenuItem.Text = "Статистика";
+            // 
+            // индивидуальныеToolStripMenuItem
+            // 
+            this.индивидуальныеToolStripMenuItem.Name = "индивидуальныеToolStripMenuItem";
+            this.индивидуальныеToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.индивидуальныеToolStripMenuItem.Text = "Индивидуальные";
+            this.индивидуальныеToolStripMenuItem.Click += new System.EventHandler(this.OnIndividClick);
             // 
             // txtbFindString
             // 
@@ -182,5 +217,9 @@
         private ListBox lstbRegex;
         private RichTextBox rtbFileText;
         private RichTextBox rtbSearchResult;
+        private ToolStripMenuItem orOfToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem статистикаToolStripMenuItem;
+        private ToolStripMenuItem индивидуальныеToolStripMenuItem;
     }
 }

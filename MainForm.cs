@@ -75,5 +75,22 @@ namespace Programming_Lab_5 {
             Settings.Default.Save();
 
         }
+
+        private void OnOrOfClick(object sender, EventArgs e)
+        {
+            ISet<String> words = data.FindSentencesFirstWords();
+            this.rtbSearchResult.Text = String.Join(", ", words);
+
+        }
+
+        private void OnQuestionClick(object sender, EventArgs e)
+        {
+            new StatisticsForm(data.FirstLetterCounts()).Show();
+        }
+
+        private void OnIndividClick(object sender, EventArgs e)
+        {
+            new StatisticsForm(this.data.ThreeWordPopularity()).Show();
+        }
     }
 }
