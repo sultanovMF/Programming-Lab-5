@@ -85,7 +85,7 @@ namespace Programming_Lab_5
                 } else {
                     isRepeated[word] = true;
                 }
-                string firstLetters = Regex.Match(word, @".{0,3}$").ToString();
+                string firstLetters = Regex.Match(word, @"^.{0,3}").ToString();
                 firstLetters = firstLetters.ToLower();
                 if (counts.ContainsKey(firstLetters)) {
                     counts[firstLetters]++;
